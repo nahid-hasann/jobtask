@@ -1,10 +1,6 @@
-import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 import { Providers } from "./providers";
-import Navbar from "@/component/Navbar";
-import Footer from "@/component/Footer";
-// import Navbar from "@/components/Navbar"; // ১. এই লাইনটা ছিল না
-// import Footer from "@/components/Footer"; // ২. এই লাইনটা ছিল না
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,16 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       
+
         <Providers>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </Providers>
+
       </body>
     </html>
   );

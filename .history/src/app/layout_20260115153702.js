@@ -2,7 +2,6 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "@/component/Navbar";
-import Footer from "@/component/Footer";
 // import Navbar from "@/components/Navbar"; // ১. এই লাইনটা ছিল না
 // import Footer from "@/components/Footer"; // ২. এই লাইনটা ছিল না
 
@@ -27,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-       
+        {/* ৩. Providers দিয়ে সবকিছু র‍্যাপ করতে হবে */}
         <Providers>
           <Navbar />
           <main className="flex-grow">
